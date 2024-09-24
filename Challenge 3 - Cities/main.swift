@@ -10,9 +10,18 @@
 
 import Foundation
 
-func cityNameCombiner(cityOne: String, cityTwo: String) -> String {
-    var result = String()
-    var editCityOne = String()
-    var editCityTwo = String()
+func cityNameCombiner(firstCity: String, secondCity: String) -> String {
+    let firstCityPrefix = firstCity.prefix(4).uppercased()
+    let secondCityPrefix = secondCity.prefix(4).uppercased()
+    
+    return "\(firstCityPrefix)-\(secondCityPrefix)"
+}
 
+print("Enter the name of a city: ")
+if let cityOne = readLine() {
+    print("Enter the name of a second city: ")
+    if let cityTwo = readLine() {
+        let result = cityNameCombiner(firstCity: cityOne, secondCity: cityTwo)
+        print(result)
+    }
 }
